@@ -1,0 +1,48 @@
+* anagrams
+
+anagrams is a simple clojure library designed to give you anagrams for a word,
+provided you give it a dictionary of words to choose from.
+
+* Usage
+
+First, add anagrams to your dependencies.
+
+#+BEGIN_SRC clojure
+  ;; Leiningen
+  [anagrams "1"]
+#+END_SRC
+
+** Maven
+#+BEGIN_SRC xml
+  <!-- Maven -->
+  <dependency>
+    <groupId>anagrams</groupId>
+    <artifactId>anagrams</artifactId>
+    <version>1</version>
+  </dependency>
+#+END_SRC
+
+Then, require anagrams into your namespace.
+
+#+BEGIN_SRC clojure
+  (ns your-namespace
+    (:require [anagrams.core :as anagrams]))
+
+  ;; Set the word list to be used to find anagrams.
+  (anagrams/set-word-list! "newline\ndelimeted\nword\nlist") ;;=> "done"
+
+  ;; To find exact anagrams
+  (anagrams/exact-anagrams-of "newline") ;; => #{"newline"}
+
+  ;; To find "fuzzy" anagrams
+  (anagrams/fuzzy-anagrams-of "newlines") ;; => #{"newline"}
+
+  ;; To append more words to the dictionary
+  (anagrams/append-word-list! "more\nawesome\nwords") ;; => "done"
+
+  (anagrams/exact-anagrams-of "rome");; => #{"more"}
+#+END_SRC
+
+* License
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
