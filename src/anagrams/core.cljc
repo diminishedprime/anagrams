@@ -60,4 +60,4 @@
   (as-> string $
     (clean-word $)
     (sort-string $)
-    (get @word-list $)))
+    (get @word-list $ #{})))

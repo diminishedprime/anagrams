@@ -122,7 +122,13 @@
                         "nagor"
                         "grano"
                         "rogan"
-                        "Ronga"})))))
+                        "Ronga"}))))
+
+  (t/testing "Testing on a large anagram list for a word that isn't in the list"
+    (let [word-list "angor\nargon\ngoran\ngrano\ngroan\nnagor\nOrang\norang\norgan\nrogan\nRonga\nother"
+          _! (sut/set-word-list! word-list)
+          actual (sut/anagrams-of "conjunction")]
+      (t/is (= actual #{})))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Property Based Tests ;;
