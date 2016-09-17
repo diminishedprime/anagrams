@@ -106,12 +106,12 @@
       (catch AssertionError e
         (t/is true)))))
 
-(t/deftest exact-anagrams-of-test
+(t/deftest anagrams-of-test
 
   (t/testing "Testing on a large anagram list with one non-anagram word"
     (let [word-list "angor\nargon\ngoran\ngrano\ngroan\nnagor\nOrang\norang\norgan\nrogan\nRonga\nother"
           _! (sut/set-word-list! word-list)
-          actual (sut/exact-anagrams-of "groan")]
+          actual (sut/anagrams-of "groan")]
       (t/is (= actual #{"Orang"
                         "goran"
                         "angor"
@@ -124,32 +124,22 @@
                         "rogan"
                         "Ronga"})))))
 
-(t/deftest fuzzy-anagrams-of-test
-
-  (t/testing "Testing on a large anagram list with one non-anagram word"
-    (let [word-list "H\nh\nE\ne\nL\nl\nO\no\neh\nhe\nHo\nho\noh\nel\noe\nLo\nlo\nhoe\nell\nLeo\nOle\nhell\nhole\nholl\nhello\nnopechecktesta"
-          _! (sut/set-word-list! word-list)
-          actual (sut/fuzzy-anagrams-of "hello")]
-      (t/is (= actual #{"hole" "Lo" "hell" "hello" "Leo" "e" "holl"
-                        "L" "el" "lo" "Ole" "oe" "Ho" "H" "E" "oh"
-                        "eh" "O" "l" "ell" "ho" "h" "he" "o" "hoe"})))))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Property Based Tests ;;
 (tcct/defspec clean-word-always-returns-a-string
   (prop/for-all
-   [my-str gen/string]
-   (let [actual (#'sut/clean-word my-str)]
-     (string? actual))))
+    [my-str gen/string]
+    (let [actual (#'sut/clean-word my-str)]
+      (string? actual))))
 
 (tcct/defspec clean-word-returns-only-a-Z
   (prop/for-all
-   [my-str gen/string]
-   (let [actual (#'sut/clean-word my-str)]
-     (re-matches #"^\w*" actual))))
+    [my-str gen/string]
+    (let [actual (#'sut/clean-word my-str)]
+      (re-matches #"^\w*" actual))))
 
 (tcct/defspec clean-word-returns-a-string-of-equal-or-lesser-length
   (prop/for-all
-   [my-str gen/string]
-   (let [actual (#'sut/clean-word my-str)]
-     (<= (count actual) (count my-str)))))
+    [my-str gen/string]
+    (let [actual (#'sut/clean-word my-str)]
+      (<= (count actual) (count my-str)))))
