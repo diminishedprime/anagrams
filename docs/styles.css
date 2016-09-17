@@ -1,3 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
+
+html {
+    background-color: #fdf6e3;
+}
+
+code {
+    font-family: 'Inconsolata', sans-serif;
+    padding: 2px;
+    color: #d33682;
+}
+
 /* BASICS */
 
 .app {
@@ -9,7 +23,7 @@
 
 .content {
     box-sizing: content-box;
-width: 900px;
+    width: 900px;
 }
 
 

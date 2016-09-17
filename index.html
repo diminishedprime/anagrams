@@ -3,7 +3,9 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>Anagrams</title>
-        <link type="text/css" rel="https://raw.githubusercontent.com/watert/bootstrap.light/master/bootstrap.light.css"></link>
+        <link rel="stylesheet" type="text/css" href="https://raw.githubusercontent.com/viebel/klipse/master/docs/css/main.css">
+        <link rel="stylesheet" type="text/css" href="docs/styles.css">
+
     </head>
     <body>
         <div class="app">
@@ -20,13 +22,13 @@
                     (anagrams/set-word-list! "post\npots\nspot\nstop\ntops\nalerting\naltering\nintegral\nrelating\ntriangle\nkeats\nskate\nstake\nsteak\ntakes")
                 </text-area>
 
-                <p>To find anagrams, call <code>anagrams/anagrams-of</code> with a string. Try changing stop, to triangle, this is a live demo! Thanks KLIPSE!</p>
+                <p>To find anagrams, call <code>anagrams/anagrams-of</code> with a string. Try changing stop, to triangle, this is a live demo! Thanks <a href="https://github.com/viebel/klipse">KLIPSE!</a></p>
                 <div class="klipse code-block">
                     (anagrams/anagrams-of "stop")
                 </div>
 
                 <p>To append words to the dictionary, use <code>anagrams/append-word-list!</code> with a newline separated list of new words</p>
-                <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
+                <div class="klipse code-block">
                     (anagrams/append-word-list! "The Best Things in Life are Free")
                 </div>
                 <p>The library is happy to find anagrams of sentences as well</p>
@@ -47,12 +49,10 @@
              codemirror_options_in: {
                  indentUnit: 8,
                  lineWrapping: true,
-                 lineNumbers: true,
                  autoCloseBrackets: true
              },
              codemirror_options_out: {
-                 lineWrapping: true,
-                 lineNumbers: true
+                 lineWrapping: true
              }
          };
         </script>

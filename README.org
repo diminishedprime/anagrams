@@ -1,5 +1,5 @@
 * Live Demo
-[[https://diminishedprime.github.io/anagrams/][Live Demo]]
+There is a [[https://diminishedprime.github.io/anagrams/][Live Demo]] available. The demo powered by the [[https://github.com/viebel/klipse][KLIPSE]] project.
 
 * anagrams
 
