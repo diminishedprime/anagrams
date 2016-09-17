@@ -14,7 +14,6 @@ width: 900px;
 
 
 .CodeMirror {
-    height: 3em !important;
     overflow-y: scroll;
 }
 

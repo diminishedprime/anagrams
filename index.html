@@ -20,12 +20,12 @@
                     (anagrams/set-word-list! "post\npots\nspot\nstop\ntops\nalerting\naltering\nintegral\nrelating\ntriangle\nkeats\nskate\nstake\nsteak\ntakes")
                 </text-area>
 
-                <p>To find anagrams, call anagrams/anagrams-of with a string. Try changing stop, to triangle, this is a live demo! Thanks KLIPSE!</p>
+                <p>To find anagrams, call <code>anagrams/anagrams-of</code> with a string. Try changing stop, to triangle, this is a live demo! Thanks KLIPSE!</p>
                 <div class="klipse code-block">
                     (anagrams/anagrams-of "stop")
                 </div>
 
-                <p>To append words to the dictionary, use anagrams/append-word-list! with a newline separated list of new words</p>
+                <p>To append words to the dictionary, use <code>anagrams/append-word-list!</code> with a newline separated list of new words</p>
                 <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
                     (anagrams/append-word-list! "The Best Things in Life are Free")
                 </div>
@@ -33,7 +33,7 @@
                 <div class="klipse code-block">
                     (anagrams/anagrams-of "Nail-biting refreshes the feet")
                 </div>
-                <p>If no anagrams can be found, anagrams-of will return an empty set.</p>
+                <p>If no anagrams can be found, <code>anagrams/anagrams-of</code> will return an empty set.</p>
                 <div class="klipse code-block">
                     (anagrams/anagrams-of "No Anagrams of me :(")
                 </div>
@@ -44,6 +44,16 @@
         <script>
          window.klipse_settings = {
              selector: '.klipse',
+             codemirror_options_in: {
+                 indentUnit: 8,
+                 lineWrapping: true,
+                 lineNumbers: true,
+                 autoCloseBrackets: true
+             },
+             codemirror_options_out: {
+                 lineWrapping: true,
+                 lineNumbers: true
+             }
          };
         </script>
         <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
