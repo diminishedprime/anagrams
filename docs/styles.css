@@ -1,5 +1,23 @@
 /* BASICS */
 
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.content {
+    box-sizing: content-box;
+width: 900px;
+}
+
+
+.CodeMirror {
+    height: 3em !important;
+    overflow-y: scroll;
+}
+
 .CodeMirror {
     /* Set height, width, borders, and global font properties here */
     font-family: monospace;

@@ -3,34 +3,37 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>Anagrams</title>
-        <style>
-         .CodeMirror {
-             height: 200px !important;
-             overflow-y: scroll;
-         }
-
-        </style>
+        <link type="text/css" rel="https://raw.githubusercontent.com/watert/bootstrap.light/master/bootstrap.light.css"></link>
     </head>
     <body>
-        <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
-            (ns your-namespace
-            (:require [anagrams.core :as anagrams]))
+        <div class="app">
+            <div class="content">
+                <h1>Anagrams Live Demo</h1>
+                <p>First, you need to require anagrams into your namespace</p>
+                <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
+                    (ns your-namespace
+                    (:require [anagrams.core :as anagrams]))
+                </div>
 
-            ;; Set the word list to be used to find anagrams.
-            (anagrams/set-word-list! "post\npots\nspot\nstop\ntops\nalerting\naltering\nintegral\nrelating\ntriangle\nkeats\nskate\nstake\nsteak\ntakes")
-            ;; To find anagrams (try changing stop to triangle)
-            (anagrams/anagrams-of "stop")
-        </div>
+                <p>You should then set the world list that should be used to find anagrams. If you're on a nix machine, I would recommend pulling in the /usr/share/dict/words file</p>
+                <text-area class="klipse code-block">
+                    (anagrams/set-word-list! "post\npots\nspot\nstop\ntops\nalerting\naltering\nintegral\nrelating\ntriangle\nkeats\nskate\nstake\nsteak\ntakes")
+                </text-area>
 
-        <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
-            (ns your-namespace
-            (:require [anagrams.core :as anagrams]))
+                <p>To find anagrams, call anagrams/anagrams-of with a string. Try changing stop, to triangle, this is a live demo! Thanks KLIPSE!</p>
+                <div class="klipse code-block">
+                    (anagrams/anagrams-of "stop")
+                </div>
 
-            ;; Set the word list to be used to find anagrams.
-            (anagrams/set-word-list! "post\npots\nspot\nstop\ntops\nalerting\naltering\nintegral\nrelating\ntriangle\nkeats\nskate\nstake\nsteak\ntakes")
-            (anagrams/append-word-list! "The Best Things in Life are Free")
-            ;; To find anagrams (try changing stop to triangle)
-            (anagrams/anagrams-of "Nail-biting refreshes the feet")
+                <p>To append words to the dictionary, use anagrams/append-word-list! with a newline separated list of new words</p>
+                <div class="klipse code-block" data-external-libs="https://raw.githubusercontent.com/diminishedprime/anagrams/master/src/">
+                    (anagrams/append-word-list! "The Best Things in Life are Free")
+                </div>
+                <p>The library is happy to find anagrams of sentences as well</p>
+                <div class="klipse code-block">
+                    (anagrams/anagrams-of "Nail-biting refreshes the feet")
+                </div>
+            </div>
         </div>
         <link rel="stylesheet" type="text/css" href="docs/styles.css">
 
