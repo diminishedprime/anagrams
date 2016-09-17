@@ -1,4 +1,4 @@
-(defproject anagrams "2"
+(defproject anagrams "3"
   :description "Anagrams is a library designed to give all anagrams of a word,
   provided a dictionary of words is provided."
   :url "https://github.com/diminishedprime/anagrams"
